@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="helpdesk_ticket_action" model="ir.actions.act_window">
+        <field name="name">Tickets</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">helpdesk.ticket</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_hd_ticket" name="Tickets" action="helpdesk_ticket_action" sequence="100" groups="base.group_user"/>
+
+    <record id="helpdesk_ticket_view_form" model="ir.ui.view">
+        <field name="name">helpdesk.curso.ticket.view.form</field>
+        <field name="model">helpdesk.ticket</field>
+        <field name="arch" type="xml">
+            <form string="HelpDesk Ticket">
+                <group>
+                    <field name="name"/>
+                    <field name="description"/>
+                    <field name="date_deadline"/>
+                </group>
+            </form>
+        </field>
+    </record>
+</odoo>
