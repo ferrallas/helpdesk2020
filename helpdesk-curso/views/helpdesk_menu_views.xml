@@ -5,7 +5,7 @@
     <menuitem name="Tickets" id="helpdesk_ticket_main_menu" string="Tickets" parent="helpdesk_menu"  sequence="20"/>
     <menuitem name="Config" id="helpdesk_config_main_menu" string="Config" parent="helpdesk_menu" sequence="100"/>
 
-    <menuitem id="menu_hd_ticket" name="Tickets" parent="helpdesk_ticket_main_menu" action="helpdesk_ticket_action" sequence="20"
+    <menuitem id="menu_hd_ticket" name="Tickets" parent="helpdesk_ticket_main_menu" action="helpdesk-curso.helpdesk_ticket_action" sequence="20"
               groups="base.group_user"/>
     <menuitem id="menu_hd_team" name="Teams" parent="helpdesk_config_main_menu" action="helpdesk_team_action" sequence="20"
               groups="base.group_user"/>
