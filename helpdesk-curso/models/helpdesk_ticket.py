@@ -8,24 +8,24 @@ class HelpdeskTicket (models.Model):
     description = fields.Text(string='Description')
     date_deadline = fields.Datetime(string='Date limit')
 
-    """stage_id = fields.Many2one(
+    stage_id = fields.Many2one(
         comodel_name='helpdesk.ticket.stage',
         string='Stage',
-        required=True)"""
-    """team_id = fields.Many2one(
+        required=True)
+    team_id = fields.Many2one(
         comodel_name='helpdesk.team',
         string='Team',
-        required=True)"""
-    """user_ids = fields.Many2many(
+        required=True)
+    user_ids = fields.Many2many(
         comodel_name='res.users',
         relation="helpdesk_ticket_users_rel",
         column1="ticket_id", column2="user_id",
         string='Users',
-    )"""
-    """
-    @api.onchange('team_id')
-    def onchange_method(self):
-        if self.team_id is not None and self.team_id is not False and self.team_id != [] and \
-                self.team_id.user_ids is not None and self.team_id.user_ids is not False and self.team_id.user_ids != []:
-            self.user_ids = [user for user in self.team_id.user_ids]
-    """
+    )
+    # """
+    # @api.onchange('team_id')
+    # def onchange_method(self):
+    #     if self.team_id is not None and self.team_id is not False and self.team_id != [] and \
+    #             self.team_id.user_ids is not None and self.team_id.user_ids is not False and self.team_id.user_ids != []:
+    #         self.user_ids = [user for user in self.team_id.user_ids]
+    # """
