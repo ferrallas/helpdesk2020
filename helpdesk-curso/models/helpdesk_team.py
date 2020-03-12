@@ -7,9 +7,13 @@ class HelpDeskTeam (models.Model):
 
     name = fields.Char(string="Name", required=True)
 
-    ticket_ids = fields.One2many(
+    """ticket_ids = fields.One2many(
         comodel_name='helpdesk.ticket',
         inverse_name='team_id',
         string='Tickets',
-        required=False)
+        required=False)"""
 
+    """user_ids = fields.One2many(
+        comodel_name='res.users',
+        inverse_name='helpdeskteam_id',
+        string='Users')"""

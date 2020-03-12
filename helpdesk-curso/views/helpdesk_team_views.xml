@@ -16,11 +16,17 @@
                 <form string="HelpDesk team">
                     <sheet>
                         <group name="name">
-                            <field name="name"/>
+                            <group>
+                                <field name="name"/>
+                            </group>
+                            <group>
+                                <!--<field name="user_ids" widget="one2many_tags"/>-->
+                            </group>
                         </group>
                         <group name="ticket_ids" string="Tickets">
                             <field name="ticket_ids" widget="many2one_list"/>
                         </group>
+
                     </sheet>
                 </form>
             </field>

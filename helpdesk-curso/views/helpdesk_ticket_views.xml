@@ -24,6 +24,9 @@
                     <group name="description" string="Description">
                         <field name="description" nolabel="1"/>
                     </group>
+                    <group name="user_ids" string="Users">
+                        <field name="user_ids" widget="many2many_tags" nolabel="1"/>
+                    </group>
                 </sheet>
             </form>
         </field>
@@ -41,14 +44,5 @@
         </field>
     </record>
 
-    <record id="helpdesk_ticket_view_search" model="ir.ui.view">
-        <field name="name">helpdesk.ticket.view.search</field>
-        <field name="model">helpdesk.ticket</field>
-        <field name="arch" type="xml">
-            <search string="">
-                <field name="name" string="string" domain="[()]"/>
-            </search>
-        </field>
-    </record>
 
 </odoo>
