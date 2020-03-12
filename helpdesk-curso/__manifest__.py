@@ -11,6 +11,12 @@
         'security/helpdesk_security.xml',
         'security/ir.model.access.csv',
         'views/helpdesk_ticket_views.xml',
+        'views/helpdesk_team_views.xml',
+        'views/helpdesk_ticket_stage_views.xml',
+        'views/helpdesk_menu_views.xml',
+    ],
+    'depends': [
+        'base'
     ],
     'application': True,
     'installable': True,

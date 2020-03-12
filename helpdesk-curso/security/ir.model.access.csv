@@ -1,2 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 user_helpdesk_ticket,user_helpdesk_ticket,model_helpdesk_ticket,helpdesk-curso.group_user_helpdesk,1,1,1,0
+user_helpdesk_team,user_helpdesk_team,model_helpdesk_team,helpdesk-curso.group_user_helpdesk,1,1,1,0
+user_helpdesk_ticket_stage,user_helpdesk_ticket_stage,model_helpdesk_ticket_stage,helpdesk-curso.group_user_helpdesk,1,1,1,0

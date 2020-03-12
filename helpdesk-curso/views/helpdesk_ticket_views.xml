@@ -7,19 +7,48 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id="menu_hd_ticket" name="Tickets" action="helpdesk_ticket_action" sequence="100" groups="base.group_user"/>
-
     <record id="helpdesk_ticket_view_form" model="ir.ui.view">
         <field name="name">helpdesk.curso.ticket.view.form</field>
         <field name="model">helpdesk.ticket</field>
         <field name="arch" type="xml">
             <form string="HelpDesk Ticket">
-                <group>
-                    <field name="name"/>
-                    <field name="description"/>
-                    <field name="date_deadline"/>
-                </group>
+                <sheet>
+                    <group name="main">
+                        <group name="name">
+                            <field name="name"/>
+                        </group>
+                        <group name="date_deadline">
+                            <field name="date_deadline"/>
+                        </group>
+                    </group>
+                    <group name="description" string="Description">
+                        <field name="description" nolabel="1"/>
+                    </group>
+                </sheet>
             </form>
         </field>
     </record>
+
+    <record id="helpdesk_ticket_view_tree" model="ir.ui.view">
+        <field name="name">helpdesk.ticket.view.tree</field>
+        <field name="model">helpdesk.ticket</field>
+        <field name="arch" type="xml">
+            <tree string="HelpDesk Tickets">
+                <field name="name"/>
+                <field name="description" optional="hide"/>
+                <field name="date_deadline" optional="show"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="helpdesk_ticket_view_search" model="ir.ui.view">
+        <field name="name">helpdesk.ticket.view.search</field>
+        <field name="model">helpdesk.ticket</field>
+        <field name="arch" type="xml">
+            <search string="">
+                <field name="name" string="string" domain="[()]"/>
+            </search>
+        </field>
+    </record>
+
 </odoo>
