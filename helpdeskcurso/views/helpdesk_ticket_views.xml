@@ -40,6 +40,8 @@
                 <field name="name"/>
                 <field name="description" optional="hide"/>
                 <field name="date_deadline" optional="show"/>
+                <field name="responsable_id" optional="show"/>
+                <field name="tickets_qty" optional="show"/>
             </tree>
         </field>
                <div class="oe_chatter">

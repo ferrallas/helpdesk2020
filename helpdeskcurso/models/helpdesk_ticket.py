@@ -40,6 +40,40 @@ class HelpdeskTicket (models.Model):
         if self.name and self.date_deadline:
             self.description = self.name + self.date_deadline
 
+    # ejemplo apuntar cosas en el chatter
+    # dentro del mail.sendmesagewithtemplate -> heredamoms el write -> y ponemos el onchange
+    # code = fields.Char(string='Reference', index=True, tracking=True)
+
+    # diferencia entre onchange y calculado
+    # calculado en el momento de abrir
+    # calculado y se almacene
+    # si se modifica een esos otros modelos -> se recalcula en mi modelo (STORE)
+    # ej mil leads tienen una funcion compleja, leerlo le va a costar mucho, se hace store y se irá recalculando
+    # mejora la busqueda, si no tendria que redifinir una funcion search para el campo calculado
+
+    # NUEVO CAMPO CALCULADO
+
+    tickets_qty = fields.Integer(
+        string='Tickets Qty',
+        compute='_compute_tickets_qty'
+    )
+
+    # si se hace una actualiacion de un campo storage, se hace por base de datos, si no puede morir x timempo recargando
+    # ej 200,000 facturas
+
+    @api.depends('responsable_id')
+    def _compute_tickets_qty(self):
+        # self es un recordset, no un record, tengo que recorrer todos los tickets
+        ticket_obj = self.env['helpdesk.ticket']
+        # import pdb; pdb.set_trace()
+        # web debugger wdb
+        for ticket in self:
+            tickets = ticket_obj.search(
+                [('responsable_id', '=', 'ticket.responsable_id.id')]
+            )
+            ticket.tickets_qty = len(tickets)
+
+
 
 
     # boton para el formulario
