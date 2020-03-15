@@ -7,9 +7,10 @@
             <form string="Set Responsable">
                 <p>
                 Are your sure you want to set as responsable?
-                    <!-- readonly solo lectura para que no te muestr box -->
-                    <field name="tickets_qty" readonly="1"></field>
                 </p>
+                <group name="name">
+                    <field name="tickets_qty" readonly="1"/>
+                </group>
 
                 <footer>
                     <button name="set_responsable"

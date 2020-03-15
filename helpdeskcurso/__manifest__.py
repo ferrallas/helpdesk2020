@@ -5,7 +5,7 @@
     'version': '13.0.1.0.0',
     'category': 'Customer Relationship Management',
     'website': '',
-    'author': 'Joan A.P. <joan.aldabo.perez@gmail.com>',
+    'author': 'Charlie',
     'license': 'AGPL-3',
     'data': [
         'security/helpdesk_security.xml',
